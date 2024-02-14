@@ -12,8 +12,10 @@ class Student extends Controller
      */
     public function index()
     {
-        $studs = Stud::all();
-        return response()->json($studs);
+        $student =Stud::all();
+    return response()->json($student)
+    ->header('Access-Control-Allow-Origin', '*')
+    ->header('Access-Control-Allow-Methods', 'GET');
     }
 
     /**
